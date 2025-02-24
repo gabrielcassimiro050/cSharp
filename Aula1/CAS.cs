@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace CAS;
+
 public abstract class Expressao
 {
     public abstract override string ToString();
@@ -11,10 +12,14 @@ public abstract class Expressao
     public static Expressao operator -(Expressao a, Expressao b) => new Subtracao(a, b);
     public static Expressao operator *(Expressao a, Expressao b) => new Multiplicacao(a, b);
     public static Expressao operator /(Expressao a, Expressao b) => new Divisao(a, b);
-    
+    public static readonly Expressao i = new NumeroComplexo(0, 1);    
+    //public static Expressao i(Expressao a, Expressao b) => new NumeroComplexo(int.Parse(a.ToString()), int.Parse(b.ToString()));
+
 
     public static implicit operator Expressao(int v) => new Numero(v);
     public static implicit operator Expressao(string s) => new Simbolo(s);
+
+    
 }
 
 public class Numero : Expressao
@@ -27,6 +32,7 @@ public class Numero : Expressao
 
     public override string ToString()
     {
+        
         return this.valor.ToString();
     }
     public override Expressao Derivar(Simbolo x)
@@ -38,6 +44,37 @@ public class Numero : Expressao
     {
         return this;
     }
+}
+
+public class NumeroComplexo : Expressao{
+    public int real, imaginaria;
+    public NumeroComplexo(int real, int imaginaria)
+    {
+        this.real = real;
+        this.imaginaria = imaginaria;
+        
+    }
+
+    
+
+    public override string ToString()
+    {   
+        if(real==0){
+            if(imaginaria==1) return "i";
+            else return this.imaginaria.ToString()+"i";
+        } 
+        return $"({this.real} + {this.imaginaria}i)";
+    }
+    public override Expressao Derivar(Simbolo x)
+    {
+        return new NumeroComplexo(0, this.imaginaria);
+    }
+    public override Expressao Simplificar()
+    {
+        return this;
+    }
+
+    public static implicit operator NumeroComplexo((int real, int imaginaria) par) => new NumeroComplexo(par.real,  par.imaginaria);
 }
 
 public class Simbolo : Expressao
@@ -141,6 +178,13 @@ public class Multiplicacao : Expressao
 
     public override Expressao Simplificar()
     {
+        //System.Console.WriteLine(b.GetType().ToString());
+        /*if(b is NumeroComplexo bAux){
+            //System.Console.WriteLine((NumeroComplexo)b.real);
+            return new Adicao(int.Parse(a.ToString()), bAux.imaginaria);
+            //return new Adicao(int.Parse(a.ToString()), (NumeroComplexo)b.real);
+        }*/
+
         if(a.ToString() == "0" || b.ToString() == "0") return new Numero(0);
         if(b.ToString() == "1") return a;
         if(a.ToString() == "1") return b;
