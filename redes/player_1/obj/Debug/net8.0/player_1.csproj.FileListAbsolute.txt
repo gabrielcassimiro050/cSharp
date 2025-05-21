@@ -1,0 +1,14 @@
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/player_1.GeneratedMSBuildEditorConfig.editorconfig
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/player_1.AssemblyInfoInputs.cache
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/player_1.AssemblyInfo.cs
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/player_1.csproj.CoreCompileInputs.cache
+/home/a2023952586/batalha_naval/player_1/bin/Debug/net8.0/player_1
+/home/a2023952586/batalha_naval/player_1/bin/Debug/net8.0/player_1.deps.json
+/home/a2023952586/batalha_naval/player_1/bin/Debug/net8.0/player_1.runtimeconfig.json
+/home/a2023952586/batalha_naval/player_1/bin/Debug/net8.0/player_1.dll
+/home/a2023952586/batalha_naval/player_1/bin/Debug/net8.0/player_1.pdb
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/player_1.dll
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/refint/player_1.dll
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/player_1.pdb
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/player_1.genruntimeconfig.cache
+/home/a2023952586/batalha_naval/player_1/obj/Debug/net8.0/ref/player_1.dll
